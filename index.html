@@ -6,22 +6,27 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-  
 </head>
 <body>
-  
-<div id="scatter_plot"></div>
+<h1>Multiple Visualisations</h1>
+
+<h2>This is the first visualisation</h2>
+<div id="vis1"></div>
+
+<h2>This is the second visualisation</h2>
+<div id="vis2"></div>
 
 <script type="text/javascript">
+  var specVis1 = "js/cases_country.json";
+  var specVis2= "js/visualization.json";
 
-  var spec2 = "js/cases_country.json";
-  vegaEmbed('#scatter_plot', spec2).then(function(result) {
+  vegaEmbed('#vis1', specVis1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
-
 </body>
 </html>
